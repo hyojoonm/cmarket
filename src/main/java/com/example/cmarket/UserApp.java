@@ -8,7 +8,12 @@ import com.example.cmarket.user.UserServiceImpl;
 public class UserApp {
 
     public static void main(String[] args){
-        UserService userService = new UserServiceImpl();
+
+        // UserService userService = new UserServiceImpl();
+
+        AppConfig appConfig = new AppConfig();
+        UserService userService = appConfig.userService();
+
         User user = new User(0L,"kimcoding",UserGrade.GRADE_2);
         userService.signup(user);
 
