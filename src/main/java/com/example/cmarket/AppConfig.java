@@ -8,18 +8,24 @@ import com.example.cmarket.user.UserRepository;
 import com.example.cmarket.user.UserRepositoryImpl;
 import com.example.cmarket.user.UserService;
 import com.example.cmarket.user.UserServiceImpl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class AppConfig {
+    @Bean
     public UserService userService() {
         return new UserServiceImpl( userRepository());
     }
+    @Bean
     public UserRepository userRepository() {
         return new UserRepositoryImpl();
     }
+    @Bean
     public OrderService OrderService(){
         return new OrderServiceImpl(userRepository(),discountInfo());
     }
-
+    @Bean
     private DiscountInfo discountInfo() {
         return new CurrentDiscountInfo();
     }

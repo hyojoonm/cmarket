@@ -13,7 +13,7 @@ public class OrderApp {
 
         AppConfig appConfig = new AppConfig();
         UserService userService = appConfig.userService();
-        OrderService orderService = appConfig.orderService();
+        OrderService orderService = appConfig.OrderService();
 
         Long userId = 0L;
         User user = new User(userId, "kimlucky", UserGrade.GRADE_1);
